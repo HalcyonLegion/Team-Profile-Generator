@@ -88,6 +88,18 @@ const commonQuestions = [
         console.log('Team profile page has been successfully created!');
         return;
       }
-
-
-  }
+    
+      // Logic for when engineer is and isn't selected
+      const questions = role === 'Engineer' ? engineerQuestions : internQuestions;
+      const answers = await inquirer.prompt(questions);
+      
+      const employeeType = {
+        Engineer: Engineer,
+        Intern: Intern
+      };
+    
+      team.push(new employeeType[role](answers.name, answers.id, answers.email, role === 'Engineer' ? answers.github : answers.school));
+    
+      // Repeat the process until 'Finish building my team' is selected
+      addEmployee();
+    };
