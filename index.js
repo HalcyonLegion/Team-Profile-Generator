@@ -80,5 +80,14 @@ const commonQuestions = [
 
     // Need space here to finish fleshing out this function
 
+    // This should end the process and let uss know it has been created
+    if (role === 'Finish building my team') {
+        const generatedHTML = render(team);
+        fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+        fs.writeFileSync(outputPath, generatedHTML, 'utf-8');
+        console.log('Team profile page has been successfully created!');
+        return;
+      }
+
 
   }
