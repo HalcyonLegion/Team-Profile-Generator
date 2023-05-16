@@ -45,3 +45,23 @@ const commonQuestions = [
       message: 'Enter office number:',
     },
   ];
+
+  // Engineer specific question for the Github Username
+  const engineerQuestions = [
+    ...commonQuestions,
+    {
+      type: 'input',
+      name: 'github',
+      message: 'Enter GitHub username:',
+    },
+  ];
+
+  // Intern specific question for their School
+  const internQuestions = [
+    ...commonQuestions,
+    {
+      type: 'input',
+      name: 'school',
+      message: 'Enter school:',
+    },
+  ];
