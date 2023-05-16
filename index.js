@@ -13,3 +13,25 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+// Create an array to store team members' info
+const team = [];
+
+//There will be common questions for each member
+
+const commonQuestions = [
+    {
+      type: 'input',
+      name: 'name',
+      message: 'Enter name:',
+    },
+    {
+      type: 'input',
+      name: 'id',
+      message: 'Enter ID:',
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Enter email:',
+    },
+  ];
