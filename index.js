@@ -35,3 +35,13 @@ const commonQuestions = [
       message: 'Enter email:',
     },
   ];
+
+  // Manager specific question for Office Number:
+  const managerQuestions = [
+    ...commonQuestions,
+    {
+      type: 'input',
+      name: 'officeNumber',
+      message: 'Enter office number:',
+    },
+  ];
