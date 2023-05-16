@@ -10,9 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
-
 // Create an array to store team members' info
 const team = [];
 
@@ -103,3 +100,14 @@ const commonQuestions = [
       // Repeat the process until 'Finish building my team' is selected
       addEmployee();
     };
+
+// When the app is fired up it needs to ask about the Manager first.
+
+const initApp = async () => {
+    const managerAnswers = await inquirer.prompt(managerQuestions);
+    const manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
+    team.push(manager);
+    addEmployee();
+  };
+  
+  initApp();
