@@ -65,3 +65,20 @@ const commonQuestions = [
       message: 'Enter school:',
     },
   ];
+
+  // Need to add a prompt to get the application to ask me who I want to add after the Manager.
+
+  const addEmployee = async () => {
+    const { role } = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'role',
+        message: 'Which kind of team member would you like to add?',
+        choices: ['Engineer', 'Intern', 'Finish building my team'],
+      },
+    ]);
+
+    // Need space here to finish fleshing out this function
+
+
+  }
